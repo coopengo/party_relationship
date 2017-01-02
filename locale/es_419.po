@@ -12,7 +12,7 @@ msgstr ""
 
 msgctxt "field:party.relation,create_uid:"
 msgid "Create User"
-msgstr ""
+msgstr "Creado por usuario"
 
 msgctxt "field:party.relation,from_:"
 msgid "From"
@@ -40,7 +40,7 @@ msgstr ""
 
 msgctxt "field:party.relation,write_uid:"
 msgid "Write User"
-msgstr ""
+msgstr "Modificado por usuario"
 
 msgctxt "field:party.relation.all,create_date:"
 msgid "Create Date"
@@ -48,7 +48,7 @@ msgstr ""
 
 msgctxt "field:party.relation.all,create_uid:"
 msgid "Create User"
-msgstr ""
+msgstr "Creado por usuario"
 
 msgctxt "field:party.relation.all,from_:"
 msgid "From"
@@ -76,7 +76,7 @@ msgstr ""
 
 msgctxt "field:party.relation.all,write_uid:"
 msgid "Write User"
-msgstr ""
+msgstr "Modificado por usuario"
 
 msgctxt "field:party.relation.type,create_date:"
 msgid "Create Date"
@@ -84,7 +84,7 @@ msgstr ""
 
 msgctxt "field:party.relation.type,create_uid:"
 msgid "Create User"
-msgstr ""
+msgstr "Creado por usuario"
 
 msgctxt "field:party.relation.type,id:"
 msgid "ID"
@@ -108,7 +108,7 @@ msgstr ""
 
 msgctxt "field:party.relation.type,write_uid:"
 msgid "Write User"
-msgstr ""
+msgstr "Modificado por usuario"
 
 msgctxt "model:ir.action,name:act_relation_all"
 msgid "Party Relations"
@@ -140,20 +140,4 @@ msgstr ""
 
 msgctxt "view:party.party:"
 msgid "Relations"
-msgstr ""
-
-msgctxt "view:party.relation.all:"
-msgid "Relation"
-msgstr ""
-
-msgctxt "view:party.relation.all:"
-msgid "Relations"
-msgstr ""
-
-msgctxt "view:party.relation.type:"
-msgid "Party Relation Type"
-msgstr ""
-
-msgctxt "view:party.relation.type:"
-msgid "Party Relation Types"
 msgstr ""

@@ -112,48 +112,35 @@ msgstr ""
 
 msgctxt "model:ir.action,name:act_relation_all"
 msgid "Party Relations"
-msgstr ""
+msgstr "Party Relations"
 
 msgctxt "model:ir.action,name:act_relation_type"
 msgid "Relation Types"
-msgstr ""
+msgstr "Relation Types"
 
 msgctxt "model:ir.ui.menu,name:menu_relation_all"
 msgid "Party Relations"
-msgstr ""
+msgstr "Party Relations"
 
 msgctxt "model:ir.ui.menu,name:menu_relation_type"
 msgid "Relation Types"
-msgstr ""
+msgstr "Relation Types"
 
+#, fuzzy
 msgctxt "model:party.relation,name:"
 msgid "Party Relation"
-msgstr ""
+msgstr "Party Relations"
 
+#, fuzzy
 msgctxt "model:party.relation.all,name:"
 msgid "Party Relation"
-msgstr ""
+msgstr "Party Relations"
 
+#, fuzzy
 msgctxt "model:party.relation.type,name:"
 msgid "Relation Type"
-msgstr ""
+msgstr "Relation Types"
 
 msgctxt "view:party.party:"
 msgid "Relations"
-msgstr ""
-
-msgctxt "view:party.relation.all:"
-msgid "Relation"
-msgstr ""
-
-msgctxt "view:party.relation.all:"
-msgid "Relations"
-msgstr ""
-
-msgctxt "view:party.relation.type:"
-msgid "Party Relation Type"
-msgstr ""
-
-msgctxt "view:party.relation.type:"
-msgid "Party Relation Types"
 msgstr ""

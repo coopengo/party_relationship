@@ -12,7 +12,7 @@ msgstr "Fecha de creación"
 
 msgctxt "field:party.relation,create_uid:"
 msgid "Create User"
-msgstr "Creado por usuario"
+msgstr "Usuario de creación"
 
 msgctxt "field:party.relation,from_:"
 msgid "From"
@@ -28,7 +28,7 @@ msgstr "Nombre"
 
 msgctxt "field:party.relation,to:"
 msgid "To"
-msgstr "A"
+msgstr "Para"
 
 msgctxt "field:party.relation,type:"
 msgid "Type"
@@ -40,7 +40,7 @@ msgstr "Fecha de modificación"
 
 msgctxt "field:party.relation,write_uid:"
 msgid "Write User"
-msgstr "Modificado por usuario"
+msgstr "Usuario de modificación"
 
 msgctxt "field:party.relation.all,create_date:"
 msgid "Create Date"
@@ -48,7 +48,7 @@ msgstr "Fecha de creación"
 
 msgctxt "field:party.relation.all,create_uid:"
 msgid "Create User"
-msgstr "Creado por usuario"
+msgstr "Usuario de creación"
 
 msgctxt "field:party.relation.all,from_:"
 msgid "From"
@@ -64,7 +64,7 @@ msgstr "Nombre"
 
 msgctxt "field:party.relation.all,to:"
 msgid "To"
-msgstr "A"
+msgstr "Para"
 
 msgctxt "field:party.relation.all,type:"
 msgid "Type"
@@ -76,7 +76,7 @@ msgstr "Fecha de modificación"
 
 msgctxt "field:party.relation.all,write_uid:"
 msgid "Write User"
-msgstr "Modificado por usuario"
+msgstr "Usuario de modificación"
 
 msgctxt "field:party.relation.type,create_date:"
 msgid "Create Date"
@@ -84,7 +84,7 @@ msgstr "Fecha de creación"
 
 msgctxt "field:party.relation.type,create_uid:"
 msgid "Create User"
-msgstr "Creado por usuario"
+msgstr "Usuario de creación"
 
 msgctxt "field:party.relation.type,id:"
 msgid "ID"
@@ -108,7 +108,7 @@ msgstr "Fecha de modificación"
 
 msgctxt "field:party.relation.type,write_uid:"
 msgid "Write User"
-msgstr "Modificado por usuario"
+msgstr "Usuario de modificación"
 
 msgctxt "model:ir.action,name:act_relation_all"
 msgid "Party Relations"
@@ -120,11 +120,11 @@ msgstr "Tipos de relación"
 
 msgctxt "model:ir.ui.menu,name:menu_relation_all"
 msgid "Party Relations"
-msgstr "Relaciones entre Terceros"
+msgstr "Relaciones entre terceros"
 
 msgctxt "model:ir.ui.menu,name:menu_relation_type"
 msgid "Relation Types"
-msgstr "Tipos de Relación"
+msgstr "Tipos de relación"
 
 msgctxt "model:party.relation,name:"
 msgid "Party Relation"

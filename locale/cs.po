@@ -25,16 +25,15 @@ msgstr ""
 #, fuzzy
 msgctxt "field:party.relation,rec_name:"
 msgid "Name"
-msgstr "Naam bijlage"
+msgstr "Namu"
 
 msgctxt "field:party.relation,to:"
 msgid "To"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:party.relation,type:"
 msgid "Type"
-msgstr "Type"
+msgstr ""
 
 msgctxt "field:party.relation,write_date:"
 msgid "Write Date"
@@ -63,16 +62,15 @@ msgstr ""
 #, fuzzy
 msgctxt "field:party.relation.all,rec_name:"
 msgid "Name"
-msgstr "Naam bijlage"
+msgstr "Namu"
 
 msgctxt "field:party.relation.all,to:"
 msgid "To"
 msgstr ""
 
-#, fuzzy
 msgctxt "field:party.relation.all,type:"
 msgid "Type"
-msgstr "Type"
+msgstr ""
 
 msgctxt "field:party.relation.all,write_date:"
 msgid "Write Date"
@@ -97,12 +95,12 @@ msgstr ""
 #, fuzzy
 msgctxt "field:party.relation.type,name:"
 msgid "Name"
-msgstr "Naam bijlage"
+msgstr "Namu"
 
 #, fuzzy
 msgctxt "field:party.relation.type,rec_name:"
 msgid "Name"
-msgstr "Naam bijlage"
+msgstr "Namu"
 
 msgctxt "field:party.relation.type,reverse:"
 msgid "Reverse Relation"
@@ -146,20 +144,4 @@ msgstr ""
 
 msgctxt "view:party.party:"
 msgid "Relations"
-msgstr ""
-
-msgctxt "view:party.relation.all:"
-msgid "Relation"
-msgstr ""
-
-msgctxt "view:party.relation.all:"
-msgid "Relations"
-msgstr ""
-
-msgctxt "view:party.relation.type:"
-msgid "Party Relation Type"
-msgstr ""
-
-msgctxt "view:party.relation.type:"
-msgid "Party Relation Types"
 msgstr ""

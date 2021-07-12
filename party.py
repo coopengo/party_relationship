@@ -3,7 +3,7 @@
 import json
 from functools import partial
 
-from sql import Union, As, Column, Null, Literal, With, Select
+from sql import Union, As, Column, Null, Literal, With
 from sql.aggregate import Min
 
 from trytond.config import config
@@ -173,17 +173,15 @@ class RelationAll(Relation, ModelView):
         # Clean local cache
         for record in all_records:
             for record_id in (record.id, record.reverse_id):
-                local_cache = record._local_cache.get(record_id)
-                if local_cache:
-                    local_cache.clear()
+                record._local_cache.pop(record_id, None)
 
         # Clean cursor cache
         for cache in Transaction().cache.values():
             if cls.__name__ in cache:
+                cache_cls = cache[cls.__name__]
                 for record in all_records:
                     for record_id in (record.id, record.reverse_id):
-                        if record_id in cache[cls.__name__]:
-                            cache[cls.__name__][record_id].clear()
+                        cache_cls.pop(record_id, None)
 
         actions = iter(args)
         args = []
@@ -223,10 +221,10 @@ class RelationAll(Relation, ModelView):
             for cache in (cache,
                     list(cache.get('_language_cache', {}).values())):
                 if cls.__name__ in cache:
+                    cache_cls = cache[cls.__name__]
                     for record in relations:
                         for record_id in (record.id, record.reverse_id):
-                            if record_id in cache[cls.__name__]:
-                                del cache[cls.__name__][record_id]
+                            cache_cls.pop(record_id, None)
 
         Relation.delete(cls.convert_instances(relations))
 
@@ -235,12 +233,6 @@ class Party(metaclass=PoolMeta):
     __name__ = 'party.party'
 
     relations = fields.One2Many('party.relation.all', 'from_', 'Relations')
-    distance = fields.Function(fields.Integer('Distance'), 'get_distance')
-
-    @classmethod
-    def __setup__(cls):
-        super().__setup__()
-        cls._order.insert(0, ('distance', 'ASC NULLS LAST'))
 
     @classmethod
     def _distance_query(cls, usages=None, party=None, depth=None):
@@ -252,6 +244,9 @@ class Party(metaclass=PoolMeta):
         context = transaction.context
         database = transaction.database
 
+        query = super()._distance_query(
+            usages=usages, party=party, depth=depth)
+
         if usages is None:
             usages = context.get('relation_usages', [])
         if party is None:
@@ -260,7 +255,7 @@ class Party(metaclass=PoolMeta):
             depth = context.get('depth', default_depth)
 
         if not party:
-            return
+            return query
 
         all_relations = RelationAll.__table__()
 
@@ -300,44 +295,9 @@ class Party(metaclass=PoolMeta):
                 & (distance.distance < depth)))
         distance.query.all_ = True
 
-        return (distance
-            .select(
-                distance.to, Min(distance.distance).as_('distance'),
-                group_by=[distance.to], with_=[distance])
-            | Select([Literal(party).as_('to'), Literal(0).as_('distance')]))
-
-    @classmethod
-    def order_distance(cls, tables):
-        party, _ = tables[None]
-        key = 'distance'
-        if key not in tables:
-            query = cls._distance_query()
-            if not query:
-                return []
-            join = party.join(query, type_='LEFT',
-                condition=query.to == party.id)
-            tables[key] = {
-                None: (join.right, join.condition),
-                }
-        else:
-            query, _ = tables[key][None]
-        return [query.distance]
-
-    @classmethod
-    def get_distance(cls, parties, name):
-        distances = {p.id: None for p in parties}
-        query = cls._distance_query()
+        relation_distance = distance.select(
+            distance.to, Min(distance.distance).as_('distance'),
+            group_by=[distance.to], with_=[distance])
         if query:
-            cursor = Transaction().connection.cursor()
-            cursor.execute(*query)
-            distances.update(cursor)
-        return distances
-
-
-class ContactMechanism(metaclass=PoolMeta):
-    __name__ = 'party.contact_mechanism'
-
-    @classmethod
-    def __setup__(cls):
-        super().__setup__()
-        cls._order.insert(0, ('party.distance', 'ASC NULLS LAST'))
+            relation_distance |= query
+        return relation_distance
